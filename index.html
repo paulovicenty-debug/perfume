@@ -4,9 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfume</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f5f2;
+        }
+
+        nav {
+            background: linear-gradient(90deg, #6a8f8f, #4e6e6e);
+            padding: 15px;
+        }
+
+        ul.menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        ul.menu li {
+            position: relative;
+            margin: 0 20px;
+        }
+
+        ul.menu li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        ul.menu li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        /* Submenu */
+        ul.submenu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: #4e6e6e;
+            padding: 10px 0;
+            border-radius: 5px;
+            min-width: 150px;
+        }
+
+        ul.submenu li {
+            margin: 0;
+        }
+
+        ul.submenu li a {
+            font-size: 16px;
+            padding: 8px 15px;
+        }
+
+        ul.menu li:hover .submenu {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
+        <!-- header -->
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Início</a></li>
+        
+                <li>
+                    <a href="#">Perfumes</a>
+                    <ul class="submenu">
+                        <li><a href="#">Masculinos</a></li>
+                        <li><a href="#">Femininos</a></li>
+                        <li><a href="#">Unissex</a></li>
+                    </ul>
+                </li>
+        
+                <li>
+                    <a href="#">Marcas</a>
+                    <ul class="submenu">
+                        <li><a href="#">Importados</a></li>
+                        <li><a href="#">Nacionais</a></li>
+                    </ul>
+                </li>
+        
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
         <header>
 
         </header>
