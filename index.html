@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,47 +67,330 @@
 
         ul.menu li:hover .submenu {
             display: block;
+
+            /* RESET */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* FUNDO GLOBAL FUTURISTA */
+            body {
+                font-family: 'Segoe UI', sans-serif;
+                background: radial-gradient(circle at top, #1a0033, #000000 70%);
+                color: #fff;
+                overflow-x: hidden;
+            }
+
+            /* EFEITO DE PARTÍCULAS (BRILHO SUAVE) */
+            body::before {
+                content: "";
+                position: fixed;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(#ff00cc 1px, transparent 1px);
+                background-size: 50px 50px;
+                animation: brilho 60s linear infinite;
+                opacity: 0.08;
+            }
+
+            @keyframes brilho {
+                from {
+                    transform: translate(0, 0);
+                }
+
+                to {
+                    transform: translate(-500px, -500px);
+                }
+            }
+
+            /* HERO */
+            .hero {
+                text-align: center;
+                padding: 140px 20px;
+                background: linear-gradient(135deg, #000000, #1a0033, #0f0c29);
+                position: relative;
+            }
+
+            .hero h1 {
+                font-size: 60px;
+                letter-spacing: 4px;
+                background: linear-gradient(90deg, #ff00cc, #00ffe7, #ffd700);
+                -webkit-background-clip: text;
+                color: transparent;
+                animation: glowText 3s infinite alternate;
+            }
+
+            @keyframes glowText {
+                from {
+                    text-shadow: 0 0 10px #ff00cc;
+                }
+
+                to {
+                    text-shadow: 0 0 25px #00ffe7;
+                }
+            }
+
+            .hero p {
+                margin-top: 20px;
+                font-size: 20px;
+                opacity: 0.85;
+            }
+
+            .hero button {
+                margin-top: 40px;
+                padding: 15px 40px;
+                border-radius: 40px;
+                border: none;
+                font-weight: bold;
+                font-size: 16px;
+                background: linear-gradient(90deg, #ff00cc, #00ffe7);
+                color: #000;
+                cursor: pointer;
+                transition: 0.4s;
+                box-shadow: 0 0 20px rgba(255, 0, 204, 0.6);
+            }
+
+            .hero button:hover {
+                transform: scale(1.1);
+                box-shadow: 0 0 40px rgba(0, 255, 231, 0.8);
+            }
+
+            /* TÍTULOS */
+            h2 {
+                font-size: 32px;
+                margin-bottom: 20px;
+                background: linear-gradient(90deg, #00ffe7, #ff00cc);
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+
+            /* DESTAQUES */
+            .destaques {
+                padding: 100px 20px;
+                text-align: center;
+            }
+
+            .cards {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+
+            /* CARD FUTURISTA */
+            .card {
+                width: 260px;
+                padding: 30px;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: 0.5s;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* EFEITO DE BORDA NEON */
+            .card::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 20px;
+                padding: 2px;
+                background: linear-gradient(45deg, #ff00cc, #00ffe7, #ffd700);
+                -webkit-mask:
+                    linear-gradient(#000 0 0) content-box,
+                    linear-gradient(#000 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+            }
+
+            /* HOVER CARD */
+            .card:hover {
+                transform: translateY(-15px) scale(1.05);
+                box-shadow: 0 0 40px rgba(255, 0, 204, 0.4);
+            }
+
+            .card h3 {
+                margin-bottom: 10px;
+            }
+
+            /* EXPERIÊNCIA */
+            .experiencia {
+                padding: 100px 20px;
+                text-align: center;
+                background: linear-gradient(135deg, #000000, #020024, #090979);
+            }
+
+            /* TECNOLOGIA */
+            .tecnologia {
+                padding: 100px 20px;
+                text-align: center;
+            }
+
+            .grid-tech {
+                display: flex;
+                justify-content: center;
+                gap: 50px;
+                flex-wrap: wrap;
+            }
+
+            .grid-tech div {
+                max-width: 260px;
+                padding: 20px;
+                border-radius: 15px;
+                background: rgba(255, 255, 255, 0.04);
+                transition: 0.4s;
+            }
+
+            .grid-tech div:hover {
+                transform: scale(1.08);
+                box-shadow: 0 0 30px rgba(0, 255, 231, 0.4);
+            }
+
+            /* CTA FINAL */
+            .cta {
+                text-align: center;
+                padding: 120px 20px;
+                background: linear-gradient(135deg, #000000, #1f1c2c, #928dab);
+            }
+
+            .cta h2 {
+                font-size: 36px;
+            }
+
+            .cta button {
+                margin-top: 30px;
+                padding: 18px 45px;
+                border-radius: 50px;
+                border: none;
+                font-size: 18px;
+                background: linear-gradient(90deg, #ffd700, #ff00cc);
+                color: #000;
+                cursor: pointer;
+                transition: 0.4s;
+                box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+            }
+
+            .cta button:hover {
+                transform: scale(1.12);
+                box-shadow: 0 0 50px rgba(255, 0, 204, 0.9);
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- header -->
-        <nav>
-            <ul class="menu">
-                <li><a href="#">Início</a></li>
-        
-                <li>
-                    <a href="#">Perfumes</a>
-                    <ul class="submenu">
-                        <li><a href="#">Masculinos</a></li>
-                        <li><a href="#">Femininos</a></li>
-                        <li><a href="#">Unissex</a></li>
-                    </ul>
-                </li>
-        
-                <li>
-                    <a href="#">Marcas</a>
-                    <ul class="submenu">
-                        <li><a href="#">Importados</a></li>
-                        <li><a href="#">Nacionais</a></li>
-                    </ul>
-                </li>
-        
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
         <header>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#">Início</a></li>
+
+                    <li>
+                        <a href="#">Perfumes</a>
+                        <ul class="submenu">
+                            <li><a href="#">Masculinos</a></li>
+                            <li><a href="#">Femininos</a></li>
+                            <li><a href="#">Unissex</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">Marcas</a>
+                        <ul class="submenu">
+                            <li><a href="#">Importados</a></li>
+                            <li><a href="#">Nacionais</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+
 
         </header>
         <main>
+            <section>
+                <section class="hero">
+                    <h1>O FUTURO DA PERFUMARIA</h1>
+                    <p>Descubra fragrâncias que transcendem o tempo, combinando tecnologia, arte e emoção em cada nota.
+                    </p>
+                    <button>Explorar Essências</button>
+                </section>
+
+                <section class="destaques">
+                    <h2>✨ Essências em Destaque</h2>
+
+                    <div class="cards">
+
+                        <div class="card">
+                            <h3>Cosmic Rose</h3>
+                            <p>Uma fusão de rosa negra com partículas sintéticas que evocam o aroma do espaço profundo.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Neon Oud</h3>
+                            <p>O tradicional oud reinventado com notas elétricas e vibrantes de energia urbana.</p>
+                        </div>
+
+                        <div class="card">
+                            <h3>Quantum Vanilla</h3>
+                            <p>Doçura sofisticada com uma base molecular que evolui conforme sua pele.</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="experiencia">
+                    <h2>🌌 Experiência Sensorial</h2>
+                    <p>
+                        Nossos perfumes não são apenas fragrâncias. São experiências sensoriais projetadas com
+                        inteligência olfativa,
+                        capazes de se adaptar ao seu humor, temperatura corporal e ambiente.
+                    </p>
+                </section>
+
+                <section class="tecnologia">
+                    <h2>🚀 Tecnologia Olfativa</h2>
+
+                    <div class="grid-tech">
+
+                        <div>
+                            <h3>IA Aromática</h3>
+                            <p>Algoritmos avançados criam combinações únicas e personalizadas.</p>
+                        </div>
+
+                        <div>
+                            <h3>Moléculas Inteligentes</h3>
+                            <p>Perfumes que evoluem ao longo do dia, revelando novas notas.</p>
+                        </div>
+
+                        <div>
+                            <h3>Fixação Quântica</h3>
+                            <p>Longa duração com adaptação ao seu estilo de vida.</p>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="cta">
+                    <h2>Pronto para sentir o impossível?</h2>
+                    <button>Descubra sua fragrância</button>
+                </section>
+            </section>
 
         </main>
         <footer>
             <p>Paulo Vicenty</p>
         </footer>
     </div>
-    
+
 </body>
+
 </html>
